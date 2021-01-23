@@ -1,0 +1,311 @@
+INFO  00:21:35,741 - Compiling source file: D:\+   Desktop\mn170700_pp1_v1\pp1_projekat\pp1_projekat\test\test301.mj
+INFO  00:21:35,771 - #6 program
+INFO  00:21:35,771 - #2 test301
+INFO  00:21:35,771 - #11 const
+INFO  00:21:35,772 - #2 int
+INFO  00:21:35,772 - #2 nula
+INFO  00:21:35,772 - #38 =
+INFO  00:21:35,773 - #3 0
+INFO  00:21:35,773 - #41 ;
+INFO  00:21:35,774 - #11 const
+INFO  00:21:35,775 - #2 int
+INFO  00:21:35,775 - #2 jedan
+INFO  00:21:35,775 - #38 =
+INFO  00:21:35,775 - #3 1
+INFO  00:21:35,775 - #41 ;
+INFO  00:21:35,775 - #11 const
+INFO  00:21:35,775 - #2 int
+INFO  00:21:35,775 - #2 pet
+INFO  00:21:35,775 - #38 =
+INFO  00:21:35,775 - #3 5
+INFO  00:21:35,775 - #41 ;
+INFO  00:21:35,775 - #2 int
+INFO  00:21:35,776 - #2 niz
+INFO  00:21:35,776 - #44 [
+INFO  00:21:35,776 - #45 ]
+INFO  00:21:35,776 - #41 ;
+INFO  00:21:35,776 - #2 char
+INFO  00:21:35,776 - #2 nizch
+INFO  00:21:35,776 - #44 [
+INFO  00:21:35,777 - #45 ]
+INFO  00:21:35,777 - #41 ;
+INFO  00:21:35,777 - #46 {
+INFO  00:21:35,777 - #20 void
+INFO  00:21:35,777 - #2 main
+INFO  00:21:35,778 - #48 (
+INFO  00:21:35,778 - #49 )
+INFO  00:21:35,779 - #2 int
+INFO  00:21:35,779 - #2 bodovi
+INFO  00:21:35,779 - #41 ;
+INFO  00:21:35,779 - #2 bool
+INFO  00:21:35,779 - #2 bt
+INFO  00:21:35,780 - #41 ;
+INFO  00:21:35,780 - #46 {
+INFO  00:21:35,780 - #2 bodovi
+INFO  00:21:35,780 - #38 =
+INFO  00:21:35,780 - #3 0
+INFO  00:21:35,781 - #41 ;
+INFO  00:21:35,782 - #2 bodovi
+INFO  00:21:35,782 - #39 ++
+INFO  00:21:35,782 - #41 ;
+INFO  00:21:35,782 - #2 bodovi
+INFO  00:21:35,782 - #38 =
+INFO  00:21:35,782 - #2 bodovi
+INFO  00:21:35,782 - #25 +
+INFO  00:21:35,782 - #2 jedan
+INFO  00:21:35,782 - #41 ;
+INFO  00:21:35,783 - #2 bodovi
+INFO  00:21:35,783 - #38 =
+INFO  00:21:35,783 - #2 bodovi
+INFO  00:21:35,783 - #27 *
+INFO  00:21:35,783 - #2 pet
+INFO  00:21:35,784 - #41 ;
+INFO  00:21:35,784 - #2 bodovi
+INFO  00:21:35,784 - #40 --
+INFO  00:21:35,784 - #41 ;
+INFO  00:21:35,784 - #17 print
+INFO  00:21:35,784 - #48 (
+INFO  00:21:35,784 - #2 bodovi
+INFO  00:21:35,784 - #49 )
+INFO  00:21:35,785 - #41 ;
+INFO  00:21:35,785 - #2 niz
+INFO  00:21:35,785 - #38 =
+INFO  00:21:35,785 - #16 new
+INFO  00:21:35,785 - #2 int
+INFO  00:21:35,785 - #44 [
+INFO  00:21:35,785 - #3 3
+INFO  00:21:35,785 - #45 ]
+INFO  00:21:35,785 - #41 ;
+INFO  00:21:35,785 - #2 niz
+INFO  00:21:35,785 - #44 [
+INFO  00:21:35,786 - #2 nula
+INFO  00:21:35,786 - #45 ]
+INFO  00:21:35,786 - #38 =
+INFO  00:21:35,786 - #2 jedan
+INFO  00:21:35,786 - #41 ;
+INFO  00:21:35,786 - #2 niz
+INFO  00:21:35,786 - #44 [
+INFO  00:21:35,786 - #3 1
+INFO  00:21:35,786 - #45 ]
+INFO  00:21:35,786 - #38 =
+INFO  00:21:35,786 - #3 2
+INFO  00:21:35,786 - #41 ;
+INFO  00:21:35,786 - #2 niz
+INFO  00:21:35,787 - #44 [
+INFO  00:21:35,787 - #2 niz
+INFO  00:21:35,787 - #44 [
+INFO  00:21:35,787 - #2 jedan
+INFO  00:21:35,787 - #45 ]
+INFO  00:21:35,787 - #45 ]
+INFO  00:21:35,787 - #38 =
+INFO  00:21:35,787 - #2 niz
+INFO  00:21:35,787 - #44 [
+INFO  00:21:35,787 - #2 niz
+INFO  00:21:35,787 - #44 [
+INFO  00:21:35,787 - #3 0
+INFO  00:21:35,787 - #45 ]
+INFO  00:21:35,787 - #45 ]
+INFO  00:21:35,787 - #27 *
+INFO  00:21:35,787 - #3 3
+INFO  00:21:35,787 - #41 ;
+INFO  00:21:35,787 - #2 bodovi
+INFO  00:21:35,787 - #38 =
+INFO  00:21:35,787 - #2 niz
+INFO  00:21:35,787 - #44 [
+INFO  00:21:35,787 - #3 2
+INFO  00:21:35,787 - #45 ]
+INFO  00:21:35,787 - #28 /
+INFO  00:21:35,788 - #2 niz
+INFO  00:21:35,788 - #44 [
+INFO  00:21:35,788 - #3 0
+INFO  00:21:35,788 - #45 ]
+INFO  00:21:35,788 - #41 ;
+INFO  00:21:35,788 - #17 print
+INFO  00:21:35,788 - #48 (
+INFO  00:21:35,788 - #2 bodovi
+INFO  00:21:35,788 - #49 )
+INFO  00:21:35,788 - #41 ;
+INFO  00:21:35,788 - #17 print
+INFO  00:21:35,788 - #48 (
+INFO  00:21:35,788 - #2 niz
+INFO  00:21:35,789 - #44 [
+INFO  00:21:35,789 - #3 2
+INFO  00:21:35,789 - #45 ]
+INFO  00:21:35,789 - #49 )
+INFO  00:21:35,789 - #41 ;
+INFO  00:21:35,789 - #2 nizch
+INFO  00:21:35,789 - #38 =
+INFO  00:21:35,789 - #16 new
+INFO  00:21:35,789 - #2 char
+INFO  00:21:35,789 - #44 [
+INFO  00:21:35,789 - #3 3
+INFO  00:21:35,789 - #45 ]
+INFO  00:21:35,789 - #41 ;
+INFO  00:21:35,789 - #2 nizch
+INFO  00:21:35,789 - #44 [
+INFO  00:21:35,789 - #3 0
+INFO  00:21:35,789 - #45 ]
+INFO  00:21:35,789 - #38 =
+INFO  00:21:35,789 - #4 a
+INFO  00:21:35,789 - #41 ;
+INFO  00:21:35,789 - #2 nizch
+INFO  00:21:35,789 - #44 [
+INFO  00:21:35,789 - #2 jedan
+INFO  00:21:35,790 - #45 ]
+INFO  00:21:35,790 - #38 =
+INFO  00:21:35,790 - #4 b
+INFO  00:21:35,790 - #41 ;
+INFO  00:21:35,790 - #2 nizch
+INFO  00:21:35,790 - #44 [
+INFO  00:21:35,790 - #2 pet
+INFO  00:21:35,790 - #26 -
+INFO  00:21:35,790 - #3 3
+INFO  00:21:35,790 - #45 ]
+INFO  00:21:35,790 - #38 =
+INFO  00:21:35,790 - #4 c
+INFO  00:21:35,791 - #41 ;
+INFO  00:21:35,792 - #17 print
+INFO  00:21:35,792 - #48 (
+INFO  00:21:35,792 - #2 nizch
+INFO  00:21:35,792 - #44 [
+INFO  00:21:35,792 - #3 1
+INFO  00:21:35,792 - #45 ]
+INFO  00:21:35,792 - #49 )
+INFO  00:21:35,792 - #41 ;
+INFO  00:21:35,792 - #17 print
+INFO  00:21:35,792 - #48 (
+INFO  00:21:35,792 - #2 nizch
+INFO  00:21:35,792 - #44 [
+INFO  00:21:35,792 - #2 jedan
+INFO  00:21:35,792 - #27 *
+INFO  00:21:35,792 - #3 2
+INFO  00:21:35,792 - #45 ]
+INFO  00:21:35,792 - #49 )
+INFO  00:21:35,792 - #41 ;
+INFO  00:21:35,792 - #2 bodovi
+INFO  00:21:35,792 - #38 =
+INFO  00:21:35,792 - #2 bodovi
+INFO  00:21:35,792 - #25 +
+INFO  00:21:35,792 - #48 (
+INFO  00:21:35,792 - #2 pet
+INFO  00:21:35,792 - #27 *
+INFO  00:21:35,792 - #2 jedan
+INFO  00:21:35,792 - #26 -
+INFO  00:21:35,793 - #3 1
+INFO  00:21:35,793 - #49 )
+INFO  00:21:35,793 - #27 *
+INFO  00:21:35,793 - #2 bodovi
+INFO  00:21:35,793 - #26 -
+INFO  00:21:35,793 - #48 (
+INFO  00:21:35,793 - #3 3
+INFO  00:21:35,793 - #29 %
+INFO  00:21:35,793 - #3 2
+INFO  00:21:35,794 - #25 +
+INFO  00:21:35,794 - #3 3
+INFO  00:21:35,794 - #27 *
+INFO  00:21:35,794 - #3 2
+INFO  00:21:35,794 - #26 -
+INFO  00:21:35,794 - #3 3
+INFO  00:21:35,794 - #49 )
+INFO  00:21:35,794 - #41 ;
+INFO  00:21:35,794 - #17 print
+INFO  00:21:35,795 - #48 (
+INFO  00:21:35,795 - #2 bodovi
+INFO  00:21:35,795 - #49 )
+INFO  00:21:35,795 - #41 ;
+INFO  00:21:35,795 - #2 bt
+INFO  00:21:35,795 - #38 =
+INFO  00:21:35,795 - #5 true
+INFO  00:21:35,795 - #41 ;
+INFO  00:21:35,795 - #17 print
+INFO  00:21:35,795 - #48 (
+INFO  00:21:35,795 - #2 bt
+INFO  00:21:35,795 - #50 ?
+INFO  00:21:35,795 - #2 bodovi
+INFO  00:21:35,795 - #51 :
+INFO  00:21:35,795 - #2 bodovi
+INFO  00:21:35,796 - #25 +
+INFO  00:21:35,796 - #3 10
+INFO  00:21:35,796 - #49 )
+INFO  00:21:35,796 - #41 ;
+INFO  00:21:35,797 - #17 print
+INFO  00:21:35,797 - #48 (
+INFO  00:21:35,797 - #5 false
+INFO  00:21:35,797 - #50 ?
+INFO  00:21:35,797 - #2 bodovi
+INFO  00:21:35,797 - #25 +
+INFO  00:21:35,797 - #3 20
+INFO  00:21:35,797 - #51 :
+INFO  00:21:35,797 - #2 bodovi
+INFO  00:21:35,797 - #25 +
+INFO  00:21:35,797 - #3 30
+INFO  00:21:35,797 - #49 )
+INFO  00:21:35,797 - #41 ;
+INFO  00:21:35,797 - #47 }
+INFO  00:21:35,797 - #47 }
+INFO  00:21:35,798 - SINTAKSNA ANALIZA USPESNO ZAVRSENA! :)
+
+INFO  00:21:35,803 - Linija 4: Deklarise se promenljiva nula
+INFO  00:21:35,803 - Linija 5: Deklarise se promenljiva jedan
+INFO  00:21:35,803 - Linija 6: Deklarise se promenljiva pet
+INFO  00:21:35,803 - Linija 8: Deklarise se promenljiva niz
+INFO  00:21:35,804 - Linija 9: Deklarise se promenljiva nizch
+INFO  00:21:35,804 - Linija 12: Obradjuje se funkcija main
+INFO  00:21:35,804 - Linija 13: Deklarise se promenljiva bodovi
+INFO  00:21:35,804 - Linija 14: Deklarise se promenljiva bt
+INFO  00:21:35,804 - Linija 16: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,804 - Linija 17: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,805 - Linija 18: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,805 - Linija 18: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,805 - Linija 18: jedan - pronadjeno!	Con jedan: int, 1, 0 
+INFO  00:21:35,805 - Linija 19: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,805 - Linija 19: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,805 - Linija 19: pet - pronadjeno!	Con pet: int, 5, 0 
+INFO  00:21:35,805 - Linija 20: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,805 - Linija 21: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,805 - Linija 24: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,806 - Linija 25: nula - pronadjeno!	Con nula: int, 0, 0 
+INFO  00:21:35,806 - Linija 25: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,806 - Linija 25: jedan - pronadjeno!	Con jedan: int, 1, 0 
+INFO  00:21:35,806 - Linija 26: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,806 - Linija 27: jedan - pronadjeno!	Con jedan: int, 1, 0 
+INFO  00:21:35,806 - Linija 27: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,806 - Linija 27: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,806 - Linija 27: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,806 - Linija 27: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,806 - Linija 28: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,806 - Linija 28: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,807 - Linija 28: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,807 - Linija 29: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,807 - Linija 30: niz - pronadjeno!	Var niz: Arr of int, 0, 0 
+INFO  00:21:35,807 - Linija 33: nizch - pronadjeno!	Var nizch: Arr of char, 1, 0 
+INFO  00:21:35,807 - Linija 34: nizch - pronadjeno!	Var nizch: Arr of char, 1, 0 
+INFO  00:21:35,807 - Linija 35: jedan - pronadjeno!	Con jedan: int, 1, 0 
+INFO  00:21:35,807 - Linija 35: nizch - pronadjeno!	Var nizch: Arr of char, 1, 0 
+INFO  00:21:35,807 - Linija 36: pet - pronadjeno!	Con pet: int, 5, 0 
+INFO  00:21:35,807 - Linija 36: nizch - pronadjeno!	Var nizch: Arr of char, 1, 0 
+INFO  00:21:35,807 - Linija 37: nizch - pronadjeno!	Var nizch: Arr of char, 1, 0 
+INFO  00:21:35,807 - Linija 38: jedan - pronadjeno!	Con jedan: int, 1, 0 
+INFO  00:21:35,807 - Linija 38: nizch - pronadjeno!	Var nizch: Arr of char, 1, 0 
+INFO  00:21:35,807 - Linija 41: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,807 - Linija 41: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,807 - Linija 41: pet - pronadjeno!	Con pet: int, 5, 0 
+INFO  00:21:35,807 - Linija 41: jedan - pronadjeno!	Con jedan: int, 1, 0 
+INFO  00:21:35,808 - Linija 41: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,808 - Linija 42: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,808 - Linija 45: bt - pronadjeno!	Var bt: boolType, 1, 1 
+INFO  00:21:35,808 - Linija 47: bt - pronadjeno!	Var bt: boolType, 1, 1 
+INFO  00:21:35,808 - Linija 47: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,808 - Linija 47: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,808 - Linija 48: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,808 - Linija 48: bodovi - pronadjeno!	Var bodovi: int, 0, 1 
+INFO  00:21:35,808 - 
+=====================SEMANTICKA OBRADA=====================
+0     classes
+1     methods in the program
+0     global variables
+3     global constants
+0     global arrays
+2     local variables in main
+24    statements in main
+INFO  00:21:35,812 - GENERISANJE KODA USPESNO ZAVRSENO! :)

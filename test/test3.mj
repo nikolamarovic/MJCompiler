@@ -1,0 +1,21 @@
+// Greska na liniji 15/16/17 Tipovi nisu ni isti.
+
+program test301
+	int  niz[];
+	int x;
+	char y;
+	bool z;
+	const int pet = 5;
+{
+	void main()	
+	{		
+		x = 4;
+		y = 'c';
+		z = true;
+		//x = y;
+		//x = z;
+		//z = y;
+	}
+}
+
+

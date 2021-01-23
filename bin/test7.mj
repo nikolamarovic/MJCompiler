@@ -1,0 +1,47 @@
+// 
+
+program test7
+
+	const int nula = 0;
+	const int jedan = 1;
+	const int pet = 5;
+
+	int niz[];
+
+	
+{
+	void main()	
+		int bodovi;
+		bool bt;
+		char nizch[];
+		bool nizb[];
+	{
+		bodovi = 1;
+		bt = true;
+		
+		niz = new int [3];
+		
+		
+		niz[(3*0+3-4+1)]=109;
+		niz[1] = (false?(bt?(false?100:5):51):32);
+		niz[2] = (-(3 % 2 + 3 * 2 - 3));
+		niz[2] = -niz[2];
+		print(niz[0]);
+		print(niz[1]);
+		print(niz[2],0);
+		nizch = new char [3];
+		
+		nizch[-pet+5*(-1+1)+10/2]='b';
+		nizch[niz[1]/32]='a';
+		nizch[niz[niz[1]%32]/109+1]='c';
+		print(nizch[0]);
+		print(nizch[1]);
+		print(nizch[2],0);
+		
+		nizb = new bool [3];
+		
+		nizb[0]=false;
+		nizb[0] = false?false:true;
+		
+	}
+}

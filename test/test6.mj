@@ -1,0 +1,30 @@
+// 11  -57   11    2
+
+program test6
+	int  niz[];
+	int x;
+	const int proba = 4;
+{
+	void main()	
+		int bodovi;
+		int proba;
+	{		
+	
+		niz = new int[5];
+		niz[1] = 4;
+		niz[2] = 3;
+		niz[3] = 6;
+		niz[4] = 5;
+		
+		x = niz[4] + niz[3];
+		print(x);
+		
+		bodovi = 3;
+		bodovi = -bodovi + 2*(-(-(-(bodovi*bodovi*bodovi))));
+		
+		print(bodovi);
+		print(x, 2);
+	}
+}
+
+

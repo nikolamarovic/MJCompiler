@@ -1,0 +1,19 @@
+// Greske na liniji 14/15.
+
+program test4
+	int  niz[];
+	int x;
+	char y;
+	bool z;
+	const int pet = 5;
+{
+	void main()	
+	{		
+		y = 't';
+		z = true;
+		y = 4 * y % z / y;
+		y = 4 + y - z - y;
+	}
+}
+
+

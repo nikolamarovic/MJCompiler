@@ -1,0 +1,18 @@
+program test301
+	int niz[];	
+{
+	void main()	
+		int x;
+	{
+		x = 1;
+		read(x);
+		x++;
+		print(x);
+
+		niz = new int[2];
+		read(niz[1]);
+		niz[1]--;
+		print(niz[1]);
+		
+	}
+}

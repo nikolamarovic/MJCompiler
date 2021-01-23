@@ -1,0 +1,31 @@
+// 5    0    5    2   10
+
+program test5
+	int  niz[];
+	const int pet = 5;
+{
+	void main()	
+		int x;
+	{		
+		niz = new int[4];
+		
+		niz[0] = 0;
+		niz[1] = 1;
+		niz[2] = 2;
+		niz[3] = 3;
+		
+		//ovo je niz[1]
+		niz[niz[niz[niz[niz[niz[1]]]]]] = 5;
+		
+		print(niz[1]);
+		
+		print(niz[0]);
+		print(niz[1]);
+		print(niz[2]);
+		
+		x = niz[1] + pet;
+		print(x);	
+	}
+}
+
+

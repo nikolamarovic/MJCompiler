@@ -1,0 +1,382 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+	public boolean errorDetected = false;
+	public int numOfErrors = 0;
+	Logger log = Logger.getLogger(getClass());
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+    	this.errorDetected = true;
+    	this.numOfErrors++;
+        //report_error("Sintaksna greska na ", cur_token);
+		//report_error("", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+    	this.errorDetected = true;
+    	this.numOfErrors++;
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol){
+            //msg.append (" na liniji ").append(((Symbol)info).left);
+		}
+        log.error(msg.toString());
+    }
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+
+terminal String IDENT;
+terminal Integer NUMBER;
+terminal String CHAR;
+terminal String BOOL;
+
+terminal PROG, BREAK, CLASS, ENUM, ELSE, CONST, IF, SWITCH, DO, WHILE, NEW, PRINT, READ, RETURN, VOID, EXTENDS, CONTINUE, CASE, STRING;
+terminal PLUS, MINUS, MUL, DIV, MOD, EQUALTO, NOTEQUAL, GREATERTHAN, LESSTHAN, GREATEROREQUAL, LESSOREQUAL, AND, OR, EQUAL;
+terminal INC, DEC, SEMICOLON, COMMA, POINT, LARRAYBRACE, RARRAYBRACE, LBRACE, RBRACE, LPAREN, RPAREN, QUESTION, COLON;
+terminal MONKEY, HASHTAG;
+
+nonterminal Program, ProgramList, MethodDeclList, ProgramDeclList;
+nonterminal FormPars, FormParsList, SingleFormPars, MethodVarList;
+nonterminal DesignatorName, StatementList, PrintConsts, PrintConst;
+nonterminal Addop, ArrayExprDecl, PostDesignStatement;
+nonterminal RelopExprList, Relop, RelopExpr;
+nonterminal MulopFactorList, Mulop;
+nonterminal ExtendsOption, ClassVarList, ClassMethodOption;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgramName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj GlobalVarDecl, GlobalVarParsDecl, GlobalVarParsList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj VarDecl, VarParsDecl, VarParsList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodName, MethodDecl;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ClassDecl, ClassName;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ConstName, ConstDecl, ConstDeclSingle, ConstDeclList, ConstDeclVal;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Statement, DesignatorStatement, Designator, ArrayPrepare;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj TernaryPrepare1, TernaryPrepare2;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MonkeyHelp;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MinusTermHelp;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct MethodRetType, Type, ArrayBrace, MinusList;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr, Expr1;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct AddopTermList, AddopTerm, Factor, ArrayExprList;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct TernaryOperator, Term, MulopFactor;
+
+Program 		::=
+				(Program) ProgramName ProgramList LBRACE MethodDeclList RBRACE
+				;
+
+ProgramName		::=
+				(ProgramName) PROG:progConst IDENT:progName
+				;
+				
+Type 			::= 
+				(Type) IDENT:typeName
+				;
+
+ProgramList 	::= 
+				(ProgramListDecls) ProgramList ProgramDeclList
+				|
+				(NoProgramList) /* epsilon */
+				;
+				
+ProgramDeclList ::=
+				(GlobalVarList) GlobalVarDecl
+				|
+				(GlobalConstList) ConstDecl
+				|
+				(GlobalClassList) ClassDecl
+				;
+
+GlobalVarDecl	::=
+				(GlobalVarDeclaration) Type:globalVarType GlobalVarParsList SEMICOLON
+				;
+
+GlobalVarParsList ::=
+				(GlobalVarParams) GlobalVarParsList COMMA GlobalVarParsDecl
+				|
+				(GlobalVarSingle) GlobalVarParsDecl
+				;
+
+GlobalVarParsDecl ::=	
+				(GlobalVarArray) IDENT:varName LARRAYBRACE RARRAYBRACE
+				|
+				(GlobalVar) IDENT:varName
+				|
+				(ErrorGlobalComma1) error:l
+				{: parser.report_error("Greska na " + lleft + ". liniji: deklarisanje globalne promenljive - oporavak izvrsen.",null); :}
+				;
+
+VarDecl			::=
+				
+				(VarDeclaration) Type:varType VarParsList SEMICOLON
+				;
+				
+VarParsList 	::=
+				(VarParams) VarParsList COMMA VarParsDecl
+				|
+				(VarParam) VarParsDecl
+				|
+				(ErrorLocalVarSemi) error:l
+				{: parser.report_error("Greska na " + lleft + ". liniji: deklarisanje lokalne promenljive - oporavak izvrsen.",null); :}
+				;
+
+VarParsDecl		::=
+				(LocalVarArray) IDENT:varName LARRAYBRACE RARRAYBRACE
+				|
+				(LocalVar) IDENT:varName 
+				;
+
+ConstDecl		::=	
+				(ConstDecl) CONST Type:constType ConstDeclSingle ConstDeclList SEMICOLON
+				;
+				
+ConstDeclList	::=
+				(ConstListDeclarations) ConstDeclList COMMA ConstDeclSingle
+				|
+				(NoConstListDeclarations) /* epsilon */
+				;
+				
+ConstDeclSingle ::=
+				(ConstDeclSingle) ConstName EQUAL ConstDeclVal
+				;
+
+ConstDeclVal	::=
+				(NumConst) NUMBER
+				|
+				(CharConst) CHAR
+				|
+				(BoolConst) BOOL
+				;
+
+ConstName		::=
+				(ConstName) IDENT:name
+				;
+
+ClassDecl		::=
+				(ClassDeclaration) ClassName ExtendsOption LBRACE ClassVarList ClassMethodOption RBRACE
+				;
+
+ClassName 		::=
+				(ClassName) CLASS IDENT:name
+				;
+
+ClassMethodOption ::=
+				(ClassMethodOptionDeclaration) LBRACE MethodDeclList RBRACE
+				|
+				(NoClassMethodOptionDeclaration) /* epsilon */
+				;
+
+ClassVarList	::=
+				(ClassVarDeclarations) ClassVarList VarDecl
+				|
+				(NoClassVarDeclarations) /* epsilon */
+				;
+
+ExtendsOption	::= 
+				(ExtendsOptionDeclaration) EXTENDS Type
+				|
+				(NoExtendsOption) /* epsilon */
+				;
+				
+MethodDeclList 	::=
+				(MethodDeclarations) MethodDeclList MethodDecl 
+				|
+				(NoMethodDeclaration) /* epsilon */
+				;
+
+MethodDecl		::= 
+				(MethodDecl) MethodName LPAREN FormPars RPAREN MethodVarList LBRACE StatementList RBRACE
+				;
+
+MethodName		::=
+				(MethodName) MethodRetType IDENT:methName
+				;
+				
+MethodRetType	::=
+				(OtherRetType) Type
+				|
+				(VoidRetType) VOID
+				;
+				
+MethodVarList	::=
+				(MethodVarDeclarations) MethodVarList VarDecl
+				|
+				(NoMethodVarDeclarations) /* epsilon */
+				;			
+				
+FormPars		::= 
+				(FormParams) FormParsList
+				|
+				(NoFormParams) /* epsilon */
+				;
+
+FormParsList	::=
+				(FormParamsDeclarations) FormParsList COMMA SingleFormPars
+				|
+				(FormParamsDeclaration) SingleFormPars
+				;
+			
+SingleFormPars	::=
+				(SingleFormParsDecl) Type IDENT LARRAYBRACE RARRAYBRACE
+				;
+
+StatementList	::=
+				(StatementListDeclarations) StatementList Statement
+				|
+				(NoStatementListDeclarations) /* epsilon */
+				;
+				
+Statement		::=
+				error SEMICOLON:l
+				{: parser.report_error("Greska na " + lleft + ". liniji: iskaz dodele vrednosti - oporavak izvrsen.",null); :}
+				|
+				(ReadStatement) READ LPAREN Designator:d RPAREN SEMICOLON
+				|
+				(PrintStatement) PRINT LPAREN Expr PrintConsts RPAREN SEMICOLON
+				|
+				(DesignStatement) DesignatorStatement SEMICOLON
+				;
+				
+PrintConsts		::=
+				(HasPrintConsts) PrintConst
+				|
+				(NoPrintConsts) /* epsilon */		
+				;
+
+PrintConst		::=
+				(PrintConst) COMMA NUMBER
+				;
+	
+DesignatorStatement ::=
+				(Increment) Designator INC
+				|
+				(Decrement) Designator DEC
+				|
+				(Assignment) Designator EQUAL Expr
+				|
+				(Modification) Designator MONKEY NUMBER MONKEY NUMBER
+				;
+							
+Designator		::=
+				(DesignatorArray) DesignatorName ArrayPrepare LARRAYBRACE Expr RARRAYBRACE
+				|
+				(DesignatorSingle) DesignatorName
+				;
+
+DesignatorName  ::=
+				(DesignatorName) IDENT:designName
+				;
+
+ArrayPrepare	::=
+				(ArrayPrepare) /* postavlja na stek adresu niza */
+				;
+				
+Expr			::=
+				(TernaryOption) TernaryOperator
+				|
+				(Expr1Option) Expr1
+				;
+
+TernaryOperator	::=
+				(TernaryOperator) Expr1 TernaryPrepare1 Expr1 TernaryPrepare2 Expr1
+				;
+				
+TernaryPrepare1	::=
+				(TernaryPrepare1) QUESTION
+				;
+				
+TernaryPrepare2 ::=
+				(TernaryPrepare2) COLON
+				;
+
+Expr1			::=	
+				(Expr1Minus) MINUS Term MinusTermHelp AddopTermList
+				|
+				(Expr1NoMinus) Term AddopTermList
+				;
+
+MinusTermHelp 	::=
+				(MinusTermHelp) /* epsilon */
+				;
+				
+
+Term			::=
+				(Term) Factor MulopFactorList
+				;
+				
+AddopTermList	::=
+				(AddopTermListDecl) AddopTermList AddopTerm
+				|
+				(NoAddopTermList) /* epsilon */
+				;
+
+AddopTerm		::=
+				(AddTermDecl) PLUS Term
+				|
+				(SubTermDecl) MINUS Term
+				;
+
+MulopFactorList ::= 
+				(MulopFactorListDecls) MulopFactorList MulopFactor
+				|
+				(NoMulopFactorListDecls) /* epsilon */
+				;
+
+MulopFactor		::=
+				(MulopFactor) Mulop Factor
+				;
+				
+Factor 			::=
+				(FactorDesignator) Designator
+				|
+				(FactorNum) NUMBER
+				|
+				(FactorChar) CHAR
+				|
+				(FactorBool) BOOL
+				|
+				(FactorExpr) LPAREN Expr RPAREN
+				|
+				(FactorNew) NEW Type LARRAYBRACE Expr RARRAYBRACE
+				;
+					
+				
+Relop			::=
+				(EqualTo) EQUALTO
+				|
+				(NotEqual) NOTEQUAL
+				|
+				(Greater) GREATERTHAN
+				|
+				(Less) LESSTHAN
+				|
+				(LessOrEqual) LESSOREQUAL
+				|
+				(GreaterOrEqual) GREATEROREQUAL
+				;
+
+Mulop			::=
+				(MulDecl) MUL
+				|
+				(DivDecl) DIV
+				|
+				(ModDecl) MOD
+				;

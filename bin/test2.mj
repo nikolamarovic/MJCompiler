@@ -1,0 +1,25 @@
+// 3 4 5 9
+
+program test301
+	int  niz[];
+	const int pet = 5;
+{
+	void main()	
+		int x;
+	{		
+		niz = new int[3];
+		
+		niz[0] = 3;
+		niz[1] = 4;
+		niz[2] = 5;
+		
+		print(niz[0]);
+		print(niz[1]);
+		print(niz[2]);
+		
+		x = niz[1] + pet;
+		print(x);	
+	}
+}
+
+
